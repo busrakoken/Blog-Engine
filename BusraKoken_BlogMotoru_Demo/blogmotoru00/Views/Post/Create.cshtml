@@ -1,0 +1,67 @@
+﻿@model BlogMotoru00.Models.Post
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="5grid-layout" id="welcome">
+		<div class="row">
+			<div class="12u mobileUI-main-content">
+				<section class="content">
+<h2>Yeni Yayın</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryId, "Kategoriler")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CategoryId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Abstract)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Abstract)
+            @Html.ValidationMessageFor(model => model.Abstract)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <p>
+            <input type="submit" value="Yayınla" />
+        </p>
+
+}
+
+<div class="donlink">
+    @Html.ActionLink("<< Yayın Listesine Dön", "Index")
+</div>
+</section></div></div></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

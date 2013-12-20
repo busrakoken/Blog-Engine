@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BlogMotoru00.Models.Page>
+
+<ul >
+    @foreach (var page in Model)
+    {
+        <li>@Html.ActionLink(page.Title,
+                "Details", "Page", 
+                new { id = page.PageId }, null)
+        </li>
+    }
+  @if (Request.IsAuthenticated) {
+    <li>
+      
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </li>
+      <li>@Html.ActionLink("Admin", "Index", "Post")</li>
+  }
+
+    
+</ul>

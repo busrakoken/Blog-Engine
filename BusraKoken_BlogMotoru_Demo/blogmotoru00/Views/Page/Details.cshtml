@@ -1,0 +1,35 @@
+﻿@model BlogMotoru00.Models.Page
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<div class="5grid-layout" id="welcome">
+		<div class="row">
+			<div class="12u mobileUI-main-content">
+				<section class="content">
+					<h2>@Model.Title</h2>
+                    
+                     <div class="display-field">
+                     @Html.DisplayFor(model => model.Body)
+                     </div>
+                     
+					
+					<p><span class="button-style1">@Model.Date </span></p>
+				</section>
+			</div>
+		</div>
+	</div>
+@*<fieldset>
+    <legend>Page</legend>
+
+  
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+</fieldset>*@
+

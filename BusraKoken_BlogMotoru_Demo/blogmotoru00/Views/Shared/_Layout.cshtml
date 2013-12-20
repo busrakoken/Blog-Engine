@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="~/Content/css/5grid/core.css" />
+        <link rel="stylesheet" href="~/Content/css/5grid/core-desktop.css" />
+        <link rel="stylesheet" href="~/Content/css/5grid/core-1200px.css" />
+        <link rel="stylesheet" href="~/Content/css/5grid/core-noscript.css" />
+        <link rel="stylesheet" href="~/Content/css/style.css" />
+        <link rel="stylesheet" href="~/Content/css/style-desktop.css" />
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+       <div id="header-wrapper">
+	<header id="header" class="5grid-layout">
+		<div id="row">
+			<div id="12u">
+				<div id="logo">
+					<h1><a href="~/Home/Index" class="mobileUI-site-name">Asp.Net Mvc 4 Blog</a></h1>
+					<p>by biz</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="12u">
+				<div class="5grid-layout" id="menu">
+					<nav class="mobileUI-site-nav">
+						@{Html.RenderAction("PageMenu", "Page");}
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+        
+<div id="wrapper">
+     @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+	</div>
+
+           
+        
+        
+        <div class="5grid-layout" id="marketing">
+	<div class="row">
+		<div class="3u">
+			<section>
+				<h2>Kategoriler</h2>
+				@{Html.RenderAction("CategoryMenu", "Category");}
+			</section>
+		</div>
+		<div class="3u">
+			<section>
+				<h2>Blogroll</h2>
+				<ul class="style3">
+					<li class="first"><a href="http://www.lambacinii.com/">Lambacinii</a></li>
+					<li><a href="http://www.sanalkurs.net/">Sanalkurs</a></li>
+					<li><a href="http://www.etkinlik.com.tr/">Etkinlik.com</a></li>
+					<li><a href="http://www.vidobu.com/">Vidobu</a></li>
+				</ul>
+			</section>
+		</div>
+	
+	</div>
+</div>
+
+
+
+        <div class="5grid-layout" id="copyright">
+	<div class="row">
+		<div class="12u">
+			<section>
+				<p>&copy; Asp.Net Mvc 4 Blog | Resim: <a href="http://fotogrph.com/">Fotogrph</a> | Tema: <a href="http://html5templates.com/">HTML5Templates</a></p>
+			</section>
+		</div>
+	</div>
+</div>
+
+        @Scripts.Render("~/bundles/jquery")
+        <script src="~/Content/css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
+        @RenderSection("scripts", required: false)
+
+    </body>
+</html>

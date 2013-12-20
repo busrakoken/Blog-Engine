@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BlogMotoru00.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="5grid-layout" id="welcome">
+		<div class="row">
+			<div class="12u mobileUI-main-content">
+				<section class="content">
+<h2>Kategoriler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kategori Ekle", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.CategoryId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.CategoryId })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="donlink">
+    @Html.ActionLink("<< Yayın Listesine Dön ", "Index","Post")
+</div>
+</section></div></div></div>

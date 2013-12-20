@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BlogMotoru00.Models.Category>
+<ul class="style3">
+    @foreach (var Cate in Model)
+    {
+        <li class="first">@Html.ActionLink(Cate.Name,
+                "Cposts", "Home", 
+                new { Cid = Cate.CategoryId }, null)
+        </li>
+    }
+</ul>

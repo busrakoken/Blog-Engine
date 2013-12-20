@@ -1,0 +1,42 @@
+﻿@model BlogMotoru00.Models.Page
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="5grid-layout" id="welcome">
+		<div class="row">
+			<div class="12u mobileUI-main-content">
+				<section class="content">
+<h2>Sil</h2>
+
+<h3>Sayfayı Silmek isteidiğine emin misin ?</h3>
+
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Body)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Sil" /> |
+        @Html.ActionLink("Sayfa Listesine Geri Dön", "Index")
+    </p>
+}
+                </section></div></div></div>

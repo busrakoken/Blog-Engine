@@ -1,0 +1,53 @@
+﻿@model BlogMotoru00.Models.Page
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="5grid-layout" id="welcome">
+		<div class="row">
+			<div class="12u mobileUI-main-content">
+				<section class="content">
+<h2>Yeni Sayfa</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+   
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <p>
+            <input type="submit" value="Oluştur" />
+        </p>
+   
+}
+
+<div class="donlink">
+    @Html.ActionLink("<< Sayfa Listesine Dön", "Index")
+</div>
+</section></div></div></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
